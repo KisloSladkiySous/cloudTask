@@ -1,0 +1,16 @@
+<div class="form" [@animationTriggerName] *ngIf ="this.menu.isMenuOpen" 
+>
+    <dx-tree-view
+      id="simple-treeview"
+      [items]="products"
+      dataStructure="plain"
+      parentIdExpr="childId"
+      keyExpr="ID"
+      displayExpr="name"
+      [width]="300"
+      (onItemClick)="selectItem($event)"
+    ></dx-tree-view>
+  </div>
+<!-- [ngStyle]="{
+    'margin-right': this.innerWidth > 1440 ? '300px':'200px'
+}"  -->

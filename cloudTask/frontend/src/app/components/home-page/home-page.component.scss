@@ -1,0 +1,20 @@
+
+.cards-wrapper { 
+    display: flex;
+
+    width:56.770833333333336vw;
+    margin:0 auto;
+    .rows { 
+        display:flex;
+        flex-direction: column;
+    }
+    .first-row {
+        margin-top: 69px;
+        display: flex;
+        flex-direction:row;
+    }
+    .second-row { 
+        display: flex;
+        flex-direction:row;
+    }
+}

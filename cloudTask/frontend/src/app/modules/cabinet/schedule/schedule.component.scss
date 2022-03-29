@@ -1,0 +1,39 @@
+.select-filter { 
+    width:56.770833333333336vw;
+    margin:0 auto;
+    .select { 
+        width:18.229166666666668vw;
+    }
+}
+.tabs  {
+    width:50%;
+    margin:0 auto;
+    margin-top:24px;
+}
+// .item__tab { 
+//     background-color: #485DCB;
+// }
+// ::ng-deep .dx-item { 
+//     color:white;
+//     border-color: black !important;
+//     border-width: 10px;
+//     background-color: #485DCB;
+//     margin-right: 5px;
+// }
+// ::ng-deep .dx-tab{ 
+//     border-color: black !important;
+//     border-width: 10px;
+//     background-color: #485DCB;
+// }
+// ::ng-deep .dx-item:hover { 
+//     color:white;
+//     background-color: #2C3C94;
+// }
+.dx-tabpanel.dx-state-focused .dx-multiview-wrapper {
+    border: 1px solid #ddd;
+}
+.dx-tabpanel.dx-state-focused .dx-tab-selected:after {
+  border-top: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+  border-left: 1px solid #ddd;
+}

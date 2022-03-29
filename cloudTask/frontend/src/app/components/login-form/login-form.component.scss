@@ -1,0 +1,75 @@
+:host {
+  background-color: #485DCB;
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  flex-direction: column;
+}
+.auth-form{
+  margin:0 auto 0 auto;
+  height: 50.05vh;
+  width: 33.59375vw;
+  background-color: white;
+  border-radius: 20px;
+  padding: 0 0 0 0;
+}
+.auth-form-title{
+  text-align:center;
+  color:#485DCB;
+  font-size:24px;
+  margin: 23px auto 31px auto;
+  display:block;
+}
+::ng-deep .mat-card-title {
+  margin: 23px auto 31px auto;
+  display:block;
+}
+.main-title {
+  color: #FFFFFF;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 36px;
+  height:43px;
+  width:160px;
+  margin:90px auto 33px auto;
+}
+.auth-form-field {
+  display:flex;
+  flex-direction: column;
+  margin-top: 21px;
+  .form-field {
+    margin:0 auto;
+    width:24.895833333333332vw;
+  }
+  .label{
+    margin-left: 4.270833333333333vw;
+  }
+  .submit-btn{
+    margin:0 auto;
+  }
+}
+
+
+.btn{
+  width:24.895833333333332vw;
+  background-color: #485DCB;
+  border: 1px solid #485DCB;
+  height: 5.920344456404736vh;
+  border-radius: 20px;
+  color:#FFFFFF;
+}
+.btn:hover  {
+  background-color: #2b46ca;
+  border: 1px solid #2b46ca;
+}
+
+// ::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline .mat-form-field-outline-start{
+//   color: black;
+//   border-radius: 20px 0 0 20px !important;
+//   min-width: 20px;
+// }
+// ::ng-deep .mat-form-field-outline-end {
+//   color: black;
+//   border-radius: 0 20px 20px 0 !important;
+// }
+

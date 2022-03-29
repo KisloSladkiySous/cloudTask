@@ -1,0 +1,16 @@
+$arm_panel_height: 80px;
+
+
+.cabinet-root {
+    height: 100%;
+
+    .right-layout {
+        // width: 100%;
+
+        &__content {
+            display: flex;
+            height:100% ;
+        }
+    }
+
+}

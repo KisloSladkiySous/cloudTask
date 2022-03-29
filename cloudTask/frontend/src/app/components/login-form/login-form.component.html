@@ -1,0 +1,23 @@
+<h1 class="main-title">CloudTask</h1>
+<mat-card class="auth-form">
+  <div class="auth-form-title">
+    <mat-card-title>ВХОД</mat-card-title>
+  </div>
+  <hr>
+  <form class="auth-form-field" [formGroup]="form" (ngSubmit)="login()">
+    <mat-label class="label">Логин</mat-label>
+    <mat-form-field class="form-field" appearance="outline">
+        <input type="login" matInput placeholder="" formControlName="login" >
+      <mat-error *ngIf="form.get('login')!.invalid && form.get('login')!.touched">Это обязательное поле  </mat-error>
+    </mat-form-field>
+    <mat-label class="label">Пароль</mat-label>
+    <mat-form-field class="form-field" appearance="outline">
+        <input type="password" matInput placeholder=""  [type]="passwordHide ? 'password' : 'text'" name="password" formControlName="password"  >
+        <mat-error *ngIf="form.get('password')!.invalid && form.get('password')!.touched">Это обязательное поле </mat-error>
+      <mat-icon matSuffix  (click)="passwordHide = !passwordHide"> {{passwordHide ? 'visibility_off' : 'visibility'}} </mat-icon>
+    </mat-form-field>
+    <div class="submit-btn">
+      <button mat-raised-button class="btn" color="primary" type="submit" [disabled]="form.invalid" >ВОЙТИ</button>
+    </div>
+  </form>
+</mat-card>

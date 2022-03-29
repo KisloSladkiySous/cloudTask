@@ -1,0 +1,54 @@
+<div class="wrapper">
+    <div class="select-filter">
+        <form  class="filters-form"[formGroup]="form"> 
+        <div class="select">
+            <div class="select-header">Преподаватель</div>
+            <dx-lookup [dataSource]="lecturerStore" 
+            placeholder = "Введите ФИО преподавателя" searchPlaceholder="Поиск" cancelButtonText="Отмена"
+            displayExpr="name_teacher"
+            noDataText = "Такого преподавателя не существует"
+            [grouped]="true"
+            (onValueChanged)="groupChanged($event)"
+            formControlName="group">
+                <dxo-drop-down-options  [closeOnOutsideClick]="true" [showTitle]="false"></dxo-drop-down-options>
+            </dx-lookup>
+            <mat-error *ngIf="form.get('group')!.invalid && form.get('group')!.touched">Это обязательное поле  </mat-error>
+        </div>
+        <div class="select">
+            <div class="select-header">Неделя</div>
+            <dx-lookup [dataSource]="paritySource" 
+            placeholder = "Выберите номер недели" searchPlaceholder="Поиск" cancelButtonText="Отмена"
+            noDataText = "Такой недели существует"
+            displayExpr="name"
+            formControlName="parity"
+            (onValueChanged)="parityChanged($event)">
+                <dxo-drop-down-options  [closeOnOutsideClick]="true" [showTitle]="false"></dxo-drop-down-options>
+            </dx-lookup>
+            <mat-error *ngIf="form.get('parity')!.invalid && form.get('parity')!.touched">Это обязательное поле  </mat-error>
+        </div>
+        <div class="select">
+            <div class="select-header">День недели</div>
+            <dx-lookup [items]="dayOfWeek" 
+            placeholder = "Введите день недели" searchPlaceholder="Поиск" cancelButtonText="Отмена"
+            formControlName="day"
+            noDataText = "Такой день не существует"
+            (onValueChanged)="dayChanged($event)">
+                <dxo-drop-down-options  [closeOnOutsideClick]="true" [showTitle]="false"></dxo-drop-down-options>
+            </dx-lookup>
+            <mat-error *ngIf="form.get('day')!.invalid && form.get('day')!.touched">Это обязательное поле  </mat-error>
+        </div>
+    </form>
+    </div>
+    <div class="table">
+        <dx-data-grid  
+        id="gridContainer"
+        [dataSource]="dataSource"
+        [columns]="columns"
+        [showBorders]="true"
+        noDataText = "Пар нет"  >
+    </dx-data-grid>
+    </div>
+    <!-- <div class="filter-btn">
+        <dx-button  (onClick)="getLessons();" class ="btn">Посмотреть расписание</dx-button>
+    </div> -->
+</div>

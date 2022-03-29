@@ -1,0 +1,45 @@
+.form { 
+    // position:absolute;\
+    display:block;
+    width:300px;
+    position:fixed;
+    height: 100%;
+    background-color: #21307D;
+    margin-right: 500px;
+}
+// ::ng-deep .dx-treeview-node .dx-treeview-item-without-checkbox .dx-treeview-node-is-leaf { 
+// width:260px;
+// }
+
+::ng-deep .dx-treeview-item{ 
+color:#FFFFFF;
+font-size: 16px;
+}
+// // .dx-treeview-node .dx-treeview-item-without-checkbox .dx-treeview-node-is-leaf
+::ng-deep .dx-treeview-item:hover  { 
+    color:#FFFFFF;
+    background-color: #2C3C94;
+}
+// ::ng-deep .dx-treeview-item-without-checkbox:hover { 
+//     color:#FFFFFF;
+//     background-color: #2C3C94;
+// }
+// При
+// ::ng-deep dx-treeview-node dx-treeview-item-without-checkbox
+// ::ng-deep  { 
+//     background-color: #2C3C94;
+// }
+// ::ng-deep .dx-treeview-item-without-checkbox.dx-state-focused > .dx-treeview-item { 
+//     background-color: #21307D;
+// }
+// ::ng-deep .dx-theme-ios7 .selected {
+//     padding: 10px;
+//   }
+  
+//   ::ng-deep .dx-field > .dx-lookup {
+//     flex: 1;
+//   }
+  ::ng-deep .dx-treeview-toggle-item-visibility::before  { 
+      color: white;
+  }
+  

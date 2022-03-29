@@ -1,0 +1,43 @@
+.select-filter { 
+    margin:0 auto;
+    justify-content: space-between;
+    .select { 
+        width:18.229166666666668vw;
+        margin-right: 21px;
+    }
+    display:flex;
+    flex-direction: row;
+    align-items: flex-end;
+}
+.btn { 
+    margin-left: 20px;
+    width:200px;
+    height:36px;
+    color:white;
+    background-color: #485DCB;
+}
+.btn:hover { 
+    background-color: #3d4faa;
+}
+.table{ 
+    margin-top: 20px;
+    width:56.770833333333336vw;
+    margin:30px auto;
+}
+.filters-form{
+    display:flex;
+    align-items: flex-end;
+}
+.table-borderless .card {
+    border: none;
+}
+.wrapper { 
+    width:56.770833333333336vw;
+    margin: 50px auto 0 auto;
+}
+::ng-deep .item__content { 
+        width:28vw;
+    }
+.select { 
+    height:100px;
+}
