@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { LOCALE_ID, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RootComponent } from './root/root.component';
 import { PanelComponent } from './panel/panel.component';
@@ -14,10 +14,12 @@ import { DxLookupModule } from 'devextreme-angular/ui/lookup';
 import { GroupsComponent } from './groups/groups.component';
 import { LessonService } from './services/lesson.service';
 import { LecturersComponent } from './lecturers/lecturers.component';
+import { AboutUsComponent } from './about-us/about-us.component';
 
+import { registerLocaleData } from '@angular/common';
+import localeRu from '@angular/common/locales/ru';
 
-
-
+registerLocaleData(localeRu, 'ru');
 @NgModule({
   declarations: [
     RootComponent,
@@ -28,7 +30,8 @@ import { LecturersComponent } from './lecturers/lecturers.component';
     UrlEditorComponent,
     HuiComponent,
     GroupsComponent,
-    LecturersComponent
+    LecturersComponent,
+    AboutUsComponent
   ],
   imports: [
     CommonModule,
@@ -38,6 +41,11 @@ import { LecturersComponent } from './lecturers/lecturers.component';
     RootComponent, 
     PanelComponent,
     MenuComponent],
-    providers:[MenuService,LookupService,LessonService]
+    providers:[
+      MenuService,
+      LookupService,
+      LessonService,
+      { provide: LOCALE_ID, useValue: 'ru' }
+    ]
 })
 export class CabinetModule { }

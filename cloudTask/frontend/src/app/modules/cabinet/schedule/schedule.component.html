@@ -1,31 +1,3 @@
-<!-- <div class="cards-wrapper">
-    <div class="rows"> 
-        <div class="first-row">
-            <app-card title="Расписание группы" path ="../../../../assets/icons/calendar.svg" url = 'groups'></app-card>
-            <app-card title="Расписание преподавателя" path ="../../../../assets/icons/calendar.svg"></app-card>
-             <app-card title="Аудитории" path ="../../../../assets/icons/people_group.svg"></app-card> 
-        </div>
-    </div>
-</div> -->
-
-<!-- <div class="select-filter">
-    <div class="filter-header">Номер Группы</div>
-    <div class="select">
-        <dx-lookup [items]="employees" [value]="employees[0]" searchPlaceholder="Поиск" cancelButtonText="Отмена"
-        (onValueChanged)="valueChanged($event)">
-            <dxo-drop-down-options  [closeOnOutsideClick]="true" [showTitle]="false"></dxo-drop-down-options>
-        </dx-lookup>
-    </div>
-</div>
-<div class="select-filter">
-    <div class="filter-header">Преподаватель</div>
-    <div class="select">
-        <dx-lookup [dataSource]="dataSource" [grouped]="true" displayExpr="Subject" searchPlaceholder="Поиск" cancelButtonText="Отмена"
-        (onValueChanged)="valueChanged2($event)">
-            <dxo-drop-down-options [closeOnOutsideClick]="true" [showTitle]="false"></dxo-drop-down-options>
-        </dx-lookup>
-    </div>
-</div> -->
 <div class="tabs">
     <div class="item__tabs">
         <dx-tabs class="item__tab" [height]="'45px'"  [width]="'500px'" [selectedItem]='selectedItem' [items]="menu" (onItemClick)="selectTab($event)">
@@ -36,7 +8,12 @@
             </div>
             
         </dx-tabs>
+        <div class="time-widget">
+            {{now | date: "EEEE-LLLL-YYYY hh:mm:ss"}} <br>
+            {{currentWeek}}
+        </div>
     </div>
+
     <div class="item__content">
         <router-outlet></router-outlet>
     </div>

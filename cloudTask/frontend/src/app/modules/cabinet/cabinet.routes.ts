@@ -1,6 +1,7 @@
 
 import { Routes } from '@angular/router';
 import { HomePageComponent } from 'src/app/components/home-page/home-page.component';
+import { AboutUsComponent } from './about-us/about-us.component';
 import { GroupsComponent } from './groups/groups.component';
 import { HuiComponent } from './hui/hui.component';
 import { LecturersComponent } from './lecturers/lecturers.component';
@@ -38,8 +39,16 @@ import { UrlEditorComponent } from './url-editor/url-editor.component';
             path: 'lecturers',
             component: LecturersComponent,
           },
+          {
+            path: "**",
+            redirectTo:"groups"
+          }
          ],
        },
+       {
+        path: 'about-us',
+        component: AboutUsComponent,
+      },
        {
          path: 'editor',
          component: UrlEditorComponent,

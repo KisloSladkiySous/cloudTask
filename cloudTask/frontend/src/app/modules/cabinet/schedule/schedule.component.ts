@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import ArrayStore from 'devextreme/data/array_store';
-import DataSource from 'devextreme/data/data_source';
-import { LookupService } from '../services/select-service/lookup.service';
+
 import * as _ from 'lodash'
 @Component({
   selector: 'app-schedule',
@@ -11,15 +9,8 @@ import * as _ from 'lodash'
 })
 export class ScheduleComponent implements OnInit {
   employees: string[];
-  selectedZazik:string;
-  dataSource: any;
-  valueChanged(data:any) {
-    this.selectedZazik = data.value;
-    console.log(this.selectedZazik)
-  }
-  valueChanged2($event:any){ 
-    console.log($event)
-  }
+  public now: Date = new Date();
+  currentWeek:any
   selectTab(e: any): void {
     this.router.navigate([`./${e.itemData.path}`], { relativeTo: this.route })
   }
@@ -30,19 +21,28 @@ export class ScheduleComponent implements OnInit {
     this.router.events.subscribe(() => {
       this.setActiveTab()
     })
-
+    let firstDay = new Date("08/30/2021")
+    let firstDayInMs = firstDay.getTime()
+    console.log(firstDay)
+    console.log(firstDayInMs)
+    let currentDay = new Date()
+    let currentDayInMs = currentDay.getTime()
+    console.log(currentDay)
+    console.log(currentDayInMs)
+    let diff = (currentDayInMs - firstDayInMs)/(7*24*60*60*1000)
+    console.log(diff)
+    let parity = diff %2
+    console.log(parity)
+    if (diff % 2 === 1) { 
+      this.currentWeek = "Верхняя неделя"
+    } else this.currentWeek = "Нижняя неделя"
   }
-  constructor(service: LookupService,
+  constructor(
     public router:Router,
     private route: ActivatedRoute) {
-    this.dataSource = new DataSource({
-      store: new ArrayStore({
-        data: service.getTasks(),
-        key: 'Id',
-      }),
-      group: 'Assigned',
-    });
-    // this.employees = service.getEmployees();
+      setInterval(() => {
+        this.now = new Date();
+      }, 1);
   }
   selectedItem: any = null
 

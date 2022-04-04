@@ -37,3 +37,8 @@
   border-right: 1px solid #ddd;
   border-left: 1px solid #ddd;
 }
+.item__tabs { 
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+}

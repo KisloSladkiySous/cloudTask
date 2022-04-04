@@ -73,7 +73,7 @@ app.get('/lessons',(req,res) => {
   // next();
 })
 app.get('/grouped',(req,res) => { 
-  const query = 'SELECT * FROM grouped_teacher';
+  const query = 'SELECT * FROM zazik';
   db.query(query,{prepared:true})
   .then(result => {
     console.log(result[0])

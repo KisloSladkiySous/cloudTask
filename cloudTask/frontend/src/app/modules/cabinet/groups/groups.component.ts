@@ -47,6 +47,14 @@ export class GroupsComponent implements OnInit {
       allowFiltering: true,
     },
     {
+      dataField: 'name_subject',
+      dataType: 'string',
+      caption: 'Название',
+      alignment: 'left',
+      allowFiltering: true,
+      width:350
+    },
+    {
       dataField: 'name_teacher',
       dataType: 'string',
       caption: 'Преподаватель',

@@ -24,18 +24,6 @@ const products: Product[] = [
     url:'subjects'
   }, 
   {
-    ID: '2',
-    name: 'Преподаватели',
-    expanded: false,
-    url:'lecturers'
-  }, 
-  {
-    ID: '3',
-    name: 'Группы',
-    expanded: false,
-    url:'groups'
-  }, 
-  {
     ID: '4',
     name: 'Ссылки',
     expanded: false,
@@ -44,7 +32,7 @@ const products: Product[] = [
   {
     ID: '5',
     name: 'Расписание',
-    url:'editor',
+    url:'schedule',
     expanded: false,
   },
   {
@@ -67,6 +55,12 @@ const products: Product[] = [
     name: 'Аудитории',
     expanded:false,
     url:'rooms'
+  },
+  {
+    ID: '52342325',
+    name: 'О нас',
+    url:'about-us',
+    expanded: false,
   },
 ];
 
