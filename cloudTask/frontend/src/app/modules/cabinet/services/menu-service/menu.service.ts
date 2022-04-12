@@ -17,17 +17,17 @@ const products: Product[] = [
     expanded: false,
     url:'main'
   }, 
-  {
-    ID: '1',
-    name: 'Предметы',
-    expanded: false,
-    url:'subjects'
-  }, 
+  // {
+  //   ID: '1',
+  //   name: 'Предметы',
+  //   expanded: false,
+  //   url:'subjects'
+  // }, 
   {
     ID: '4',
-    name: 'Ссылки',
+    name: 'Сообщения',
     expanded: false,
-    url:'editor'
+    url:'messages'
   }, 
   {
     ID: '5',
@@ -49,13 +49,13 @@ const products: Product[] = [
     expanded:false,
     url:'schedule/lecturers'
   },
-  {
-    ID: '5_3',
-    childId:"5",
-    name: 'Аудитории',
-    expanded:false,
-    url:'rooms'
-  },
+  // {
+  //   ID: '5_3',
+  //   childId:"5",
+  //   name: 'Аудитории',
+  //   expanded:false,
+  //   url:'rooms'
+  // },
   {
     ID: '52342325',
     name: 'О нас',
