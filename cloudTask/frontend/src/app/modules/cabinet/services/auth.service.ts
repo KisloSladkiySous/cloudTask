@@ -4,6 +4,7 @@ import { Router } from "@angular/router";
 
 import { BehaviorSubject } from "rxjs";
 import { shareReplay, tap } from "rxjs/operators";
+import { environment } from "src/environments/environment.prod";
 
 export interface User {
   id: number;
@@ -17,7 +18,7 @@ export interface User {
   providedIn: "root",
 })
 export class AuthService {
-  private url = "http://localhost:3000/auth";
+  private url = environment.baseurl
 
   isUserLoggedIn$ = new BehaviorSubject<boolean>(false);
   userId: Pick<User, "id">;
@@ -50,7 +51,7 @@ export class AuthService {
   // }
   login( nickname:any,  password:any ) { 
     return this.http
-                .post(`${this.url}/login`, { nickname, password }, this.httpOptions)
+                .post(`${this.url}/auth/login`, { nickname, password }, this.httpOptions)
                 .pipe(
                   tap(res => this.setSession(res)),
                   shareReplay()
