@@ -38,7 +38,7 @@ app.get('/lecturer',(req,res) => {
   }).catch(function (err) { 
     console.log(err.message)
   })
-  next();
+  // next();
 })
 
 app.get('/group',(req,res) => { 
@@ -72,6 +72,19 @@ app.get('/lessons',(req,res) => {
   })  
   // next();
 })
+
+app.get('/teacherLessons',(req,res) => { 
+  console.log(req.body)
+  const query = 'SELECT * FROM lessons_view WHERE name_teacher = ?  AND parity = ? AND  day = ?';
+  db.query(query,[req.query.name_teacher,req.query.parity,req.query.day],{prepared:true})
+  .then(result => {
+    res.send(result[0])
+  }).catch(function (err) { 
+    console.log(err.message)
+  })  
+  // next();
+})
+
 app.get('/grouped',(req,res) => { 
   const query = 'SELECT * FROM zazik';
   db.query(query,{prepared:true})

@@ -19,10 +19,6 @@ router.post(
   authController.signup
 );
 
-// router.post('/login', authController.login);
+router.post('/login', authController.login);
 
 module.exports = router;
-// body('university_id'),
-  // body('nickname'),
-  // body('admin_name'),
-  // body('password').trim().isLength({ min: 4 }),

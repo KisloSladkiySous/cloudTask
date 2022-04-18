@@ -8,7 +8,7 @@
             displayExpr="name_teacher"
             noDataText = "Такого преподавателя не существует"
             [grouped]="true"
-            (onValueChanged)="groupChanged($event)"
+            (onValueChanged)="lecturerChanged($event)"
             formControlName="group">
                 <dxo-drop-down-options  [closeOnOutsideClick]="true" [showTitle]="false"></dxo-drop-down-options>
             </dx-lookup>
@@ -38,6 +38,9 @@
             <mat-error *ngIf="form.get('day')!.invalid && form.get('day')!.touched">Это обязательное поле  </mat-error>
         </div>
     </form>
+    </div>
+    <div class="filter-btn">
+        <dx-button  (onClick)="getLessons();" class ="btn">Посмотреть расписание</dx-button>
     </div>
     <div class="table">
         <dx-data-grid  

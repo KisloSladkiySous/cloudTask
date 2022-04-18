@@ -9,11 +9,13 @@
     <mat-form-field class="form-field" appearance="outline">
         <input type="login" matInput placeholder="" formControlName="login" >
       <mat-error *ngIf="form.get('login')!.invalid && form.get('login')!.touched">Это обязательное поле  </mat-error>
+      <mat-error *ngIf="invalid">Неверный логин или пароль </mat-error>
     </mat-form-field>
     <mat-label class="label">Пароль</mat-label>
     <mat-form-field class="form-field" appearance="outline">
         <input type="password" matInput placeholder=""  [type]="passwordHide ? 'password' : 'text'" name="password" formControlName="password"  >
         <mat-error *ngIf="form.get('password')!.invalid && form.get('password')!.touched">Это обязательное поле </mat-error>
+        <mat-error *ngIf="invalid">Неверный логин или пароль </mat-error>
       <mat-icon matSuffix  (click)="passwordHide = !passwordHide"> {{passwordHide ? 'visibility_off' : 'visibility'}} </mat-icon>
     </mat-form-field>
     <div class="submit-btn">

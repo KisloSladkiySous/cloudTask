@@ -24,4 +24,14 @@ export class LessonService {
     params:params
   });
   }
+  getLessonsByTeacher(name_teacher:string,parity:any,day:any){ 
+    let params = new HttpParams;
+    params= params.append("name_teacher",name_teacher);
+    params = params.append("parity",parity);
+    params = params.append("day",day);
+
+  return this.http.get<DataSource[]>(`${this.baseUrl}/teacherLessons`, {
+    params:params
+  });
+  }
 }

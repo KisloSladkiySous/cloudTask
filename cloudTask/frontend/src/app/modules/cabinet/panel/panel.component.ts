@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../services/auth.service';
 import { MenuService } from '../services/menu-service/menu.service';
 
 
@@ -11,10 +12,12 @@ import { MenuService } from '../services/menu-service/menu.service';
 export class PanelComponent implements OnInit {
 
   constructor(
-    public menu:MenuService
+    public menu:MenuService,
+    public authService:AuthService
   ) { }
-
+  name:any
   ngOnInit(): void {
+     this.name = localStorage.getItem("nickname")
   }
   menuState() { 
     console.log(1);

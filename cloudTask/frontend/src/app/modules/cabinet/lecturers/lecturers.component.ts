@@ -13,8 +13,8 @@ import { finalize } from 'rxjs';
 })
 export class LecturersComponent implements OnInit {
   teachers: Lecturer[] = [];
-  selectedGroup: string;
-  selectedDay:string;
+  selectedDay: string;
+  selectedLecturer:string;
   selectedParity:number;
   dataSource!: DataSource[];
   lecturerStore: any;
@@ -72,9 +72,9 @@ export class LecturersComponent implements OnInit {
       allowFiltering: true,
     },
     {
-      dataField: 'name_teacher',
+      dataField: 'name_subjectr',
       dataType: 'string',
-      caption: 'Преподаватель',
+      caption: 'Дисциплина',
       alignment: 'left',
       allowFiltering: true,
     },
@@ -103,10 +103,11 @@ export class LecturersComponent implements OnInit {
       }
       )
   }
-  groupChanged(data: any) {
+  lecturerChanged(data: any) {
     console.log(data)
-    this.selectedGroup = data.value;
-    console.log(this.selectedGroup);
+    console.log(data)
+    this.selectedLecturer = data.value.name_teacher;
+
   }
   dayChanged(data: any) {
     this.selectedDay = data.value;
@@ -117,5 +118,27 @@ export class LecturersComponent implements OnInit {
     console.log(data)
     this.selectedParity = data.value.parity;
     console.log(this.selectedParity);
+  }
+  getLessons() {
+
+    let arr:any [] = []
+    console.log(this.form)
+    if (this.form.valid) { 
+      this.lessons
+      .getLessonsByTeacher(this.selectedLecturer,this.selectedParity,this.selectedDay)
+      .subscribe((lessons) => {
+        arr = lessons
+        let newarr =arr.filter(lesson => lesson["day"] === "Понедельник")
+        console.log(newarr)
+        this.dataSource = lessons;
+
+      });
+    }
+     else { 
+      this.form.get("group")?.markAsTouched();
+      this.form.get("parity")?.markAsTouched();
+      this.form.get("day")?.markAsTouched();
+    }
+
   }
 }

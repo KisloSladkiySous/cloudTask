@@ -7,8 +7,8 @@ module.exports = class User {
     this.admin_name = admin_name;
     this.password = password;
   }
-  static find(email) {
-    return db.execute('SELECT * FROM users WHERE email = ?', [email]);
+  static find(nickname) {
+    return db.execute('SELECT * FROM admin WHERE nickname = ?', [nickname]);
   }
 
   static save(user) {
