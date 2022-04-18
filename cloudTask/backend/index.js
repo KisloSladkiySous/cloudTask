@@ -4,6 +4,8 @@ const bodyParser = require('body-parser');
 const sequelize = require('sequelize')
 const authRoutes = require('./routes/auth');
 const db = require("./utils/database")
+const path = require('path');
+const compression = require('compression'); 
 // const postsRoutes = require('./routes/posts');
 
 // const errorController = require('./controllers/error');
@@ -102,5 +104,13 @@ app.get('/grouped',(req,res) => {
 // app.use(errorController.get404);
 
 // app.use(errorController.get500);
+app.use(compression());
+
+app.use(express.static(path.join(__dirname, '../frontend/dist/frontend')));
+
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, '../frontend/dist/frontend/index.html'));
+});
 
 app.listen(ports, () => console.log(`Listening on port ${ports}`));
+
